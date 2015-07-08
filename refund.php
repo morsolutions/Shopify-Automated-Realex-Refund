@@ -108,11 +108,11 @@ if ($verified) {
             xml_set_character_data_handler($xml_parser, "cDataHandler");
 
             // TODO: remove this test request
-//        $realexOrderId = 'c5291814711';
-//        $pasref = '14297804633382756';
-//        $authcode = '12345';
-//        $currency = 'EUR';
-//        $amount = 1299;
+//        $realexOrderId = '#';
+//        $pasref = '#';
+//        $authcode = '#';
+//        $currency = '#';
+//        $amount = #;
             //A number of variables are needed to generate the request xml that is sent to Realex Payments.
             $xml = "<request type='rebate' timestamp='$timestamp'>
 	<merchantid>$merchantid</merchantid>
