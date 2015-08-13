@@ -233,8 +233,8 @@ if ($verified) {
                 $mail->Port = 587;                                    // TCP port to connect to
 
                 $mail->From = '#';
-                $mail->FromName = 'vavavoom.ie Refund';
-                $mail->addAddress('info@vavavoom.ie');     // Add a recipient
+                $mail->FromName = '';
+                $mail->addAddress('');     // Add a recipient
 				$mail->addCC('#');     
                 $mail->addBCC('#');
 				
