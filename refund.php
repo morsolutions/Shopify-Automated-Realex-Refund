@@ -94,12 +94,12 @@ if ($verified) {
             $timestamp = strftime("%Y%m%d%H%M%S");
             mt_srand((double) microtime() * 1000000);
 
-            // This section of code creates the md5hash that is needed
+            // This section of code creates the sha1hash that is needed
             $cardnumber = '';
             $tmp = "$timestamp.$merchantid.$realexOrderId.$amount.$currency.$cardnumber";
-            $md5hash = md5($tmp);
-            $tmp = "$md5hash.$secret";
-            $md5hash = md5($tmp);
+            $sha1hash = sha1($tmp);
+            $tmp = "$sha1hash.$secret";
+            $sha1hash = sha1($tmp);
             $refundhash = sha1($refundPass);
 
             // Create and initialise XML parser
@@ -120,7 +120,7 @@ if ($verified) {
             <comment id='1'>$comment1</comment>
             <comment id='2'>$comment2</comment>
 	</comments>
-	<md5hash>$md5hash</md5hash>
+	<sha1hash>$sha1hash</sha1hash>
     </request>";
 
             $logData .= "Realex Request: " . $xml . "\r\n";
